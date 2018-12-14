@@ -16,8 +16,8 @@ class DoubanLogin():
     self.session.cookies = cookielib.LWPCookieJar(filename="cookies.txt")
     self.url = 'https://accounts.douban.com/login'
     self.redirurl = 'https://book.douban.com/mine'
-    self.email = 'quds8724@qq.com'
-    self.password = 'rgnrwks123'
+    self.email = '******'
+    self.password = '******'
     # 构造post数据
     self.data = {
       'redir': self.redirurl,
