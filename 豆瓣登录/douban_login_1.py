@@ -52,6 +52,12 @@ class DoubanLogin():
     captcha_id = re.search(pattern, page.text).group(1)
     # 将验证码图片保存到本地
     urllib.request.urlretrieve(captcha_url, "captcha.png")
+    try:
+      image = Image.open('captcha.png')
+      image.show()
+      image.close()
+    except Exception as e:
+      print("打开验证码图片失败，请手动重试")
     captcha = input('please input the captcha:')
     self.data['captcha-solution'] = captcha
     self.data['captcha-id'] = captcha_id
@@ -84,5 +90,5 @@ class DoubanLogin():
 
 douban = DoubanLogin()
 douban.login()
-douban.get_index()
+# douban.get_index()
 print(douban.is_login())
