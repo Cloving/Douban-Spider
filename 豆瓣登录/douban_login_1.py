@@ -88,7 +88,11 @@ class DoubanLogin():
     for item in result:
       print(item.find('a').get_text())
 
-douban = DoubanLogin()
-douban.login()
-# douban.get_index()
-print(douban.is_login())
+if __name__ == "__main__":
+  douban = DoubanLogin()
+  # 开始登录，并保存cookie
+  douban.login()
+  # 携带cookie进行登录
+  douban.get_index()
+  # 判断是否为已登录状态
+  print(douban.is_login())
